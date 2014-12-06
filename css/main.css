@@ -10,4 +10,10 @@ body {
     height: 130px;
     margin-right: 10px;
 }
+#errorMessage {
+    display: none;
+}
 
+body ul {
+    list-style-type: none;
+}
