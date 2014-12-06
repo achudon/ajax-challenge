@@ -17,16 +17,8 @@ h3 {
     font-size: 20px;
 }
 
-#title {
-    width: 30%;
-}
-
-#name {
-    width: 30%;
-}
-
-#body {
-    width: 60%;
+.row {
+    margin-bottom: 30px;
 }
 
 .product-picture {
@@ -39,10 +31,20 @@ h3 {
     display: none;
 }
 
-.spacing {
-    height: 50px;
-}
-
 body ul {
     list-style-type: none;
+}
+
+@media (min-width: 912px) {
+    #title {
+        width: 30%;
+    }
+
+    #name {
+        width: 30%;
+    }
+
+    #body {
+        width: 60%;
+    }
 }

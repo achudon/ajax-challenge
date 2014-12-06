@@ -13,21 +13,29 @@
         <main class="container-fluid" ng-app="CommentsApp" ng-controller="CommentsController">
             <section>
                 <h1>The Cornballer</h1>
-                <img src="img/cornballer.jpg" alt="product picture" class="product-picture">
 
-                <h3>Soy loco por los Cornballs!!!</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi, dolorum earum esse eum
-                    excepturi in iusto laborum, magni natus necessitatibus neque nobis nostrum perferendis quae quaerat,
-                    qui recusandae repellat!</p>
+                <div class ="row">
+                    <div class="col-md-2">
+                        <img src="img/cornballer.jpg" alt="product picture" class="product-picture">
+                    </div>
+                    <div class="col-md-10">
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aut beatae consequatur distinctio
-                    nihil quo, ratione reprehenderit? Beatae, blanditiis delectus deleniti, dicta dolor dolore expedita
-                    modi necessitatibus quae, suscipit voluptatum!</p>
+                        <h3>Soy loco por los Cornballs!!!</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi, dolorum earum esse eum
+                            excepturi in iusto laborum, magni natus necessitatibus neque nobis nostrum perferendis quae quaerat,
+                            qui recusandae repellat!</p>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aut beatae consequatur distinctio
+                            nihil quo, ratione reprehenderit? Beatae, blanditiis delectus deleniti, dicta dolor dolore expedita
+                            modi necessitatibus quae, suscipit voluptatum!</p>
+                    </div>
+
+                </div>
             </section>
 
-            <div class="spacing"></div>
-
+            <div class="row">
             <section>
+
                 <div class="alert alert-danger" role="alert" id="errorMessage">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                     <span class="sr-only">Error: </span>Please check that you have entered both a Title and a Comment.
@@ -65,7 +73,9 @@
                             ng-click="addComment()">Add a Comment</button>
                 </form>
             </section>
+            </div>
 
+            <div class="row">
             <section>
                 <h2>Comments</h2>
                 <p id="no-comments">No comments yet. Be the first to review this!</p>
@@ -103,6 +113,7 @@
                 as well as delete it
                  -->
             </section>
+            </div>
 
         </main>
 
