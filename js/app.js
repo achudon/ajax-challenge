@@ -64,6 +64,7 @@ angular.module('CommentsApp', ['ui.bootstrap'])
             } else {
                 $('#errorMessage').show();
                 $scope.inserting = false;
+                window.location.assign('#errorMessage');
             }
         }; // end of addComment function
 

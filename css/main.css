@@ -5,13 +5,42 @@ body {
     font-weight: 400;
 }
 
+.container-fluid {
+    margin: 0 15%;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+#title {
+    width: 30%;
+}
+
+#name {
+    width: 30%;
+}
+
+#body {
+    width: 60%;
+}
+
 .product-picture {
     float: left;
-    height: 130px;
-    margin-right: 10px;
+    height: 140px;
+    margin-right: 20px;
+    clear: both;
 }
 #errorMessage {
     display: none;
+}
+
+.spacing {
+    height: 50px;
 }
 
 body ul {

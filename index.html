@@ -10,12 +10,22 @@
     </head>
     <body>
 
-        <main class="container" ng-app="CommentsApp" ng-controller="CommentsController">
+        <main class="container-fluid" ng-app="CommentsApp" ng-controller="CommentsController">
             <section>
-                <img src="img/super-bass-o-matic-76.jpg" alt="product picture" class="product-picture">
-                <h1>The Super Bass-o-Matic '76</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia cumque deserunt ullam repudiandae nisi corporis! Ipsum, ducimus commodi, itaque porro distinctio consequuntur! Autem doloremque numquam nemo ex nulla tempora quis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde nihil doloribus excepturi quisquam error possimus veritatis facere, commodi cumque ab atque dolore ducimus obcaecati ipsa, impedit! Consequuntur, eligendi iure cumque!</p>
+                <h1>The Cornballer</h1>
+                <img src="img/cornballer.jpg" alt="product picture" class="product-picture">
+
+                <h3>Soy loco por los Cornballs!!!</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi, dolorum earum esse eum
+                    excepturi in iusto laborum, magni natus necessitatibus neque nobis nostrum perferendis quae quaerat,
+                    qui recusandae repellat!</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aut beatae consequatur distinctio
+                    nihil quo, ratione reprehenderit? Beatae, blanditiis delectus deleniti, dicta dolor dolore expedita
+                    modi necessitatibus quae, suscipit voluptatum!</p>
             </section>
+
+            <div class="spacing"></div>
 
             <section>
                 <div class="alert alert-danger" role="alert" id="errorMessage">
@@ -40,13 +50,15 @@
 
                     <div class="form-group">
                         <label for="rating">Rating</label>
-                        <rating max="5" id="rating" ng-model="newComment.rating"></rating>
+                        <p><rating max="5" id="rating" ng-model="newComment.rating"></rating></p>
                     </div>
 
                     <div class="form-group">
                         <label for="body">Comment</label>
-                        <input type="text" id="body" class="form-control"
-                                placeholder="comment text" ng-model="newComment.body"/>
+                        <!--<input type="text" id="body" class="form-control"-->
+                                <!--/>-->
+                        <textarea class="form-control" id="body" rows="3" placeholder="comment text"
+                                  ng-model="newComment.body"></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-success"
@@ -58,35 +70,33 @@
                 <h2>Comments</h2>
                 <p id="no-comments">No comments yet. Be the first to review this!</p>
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Rating</th>
-                            <th>Author</th>
-                            <th>Comment</th>
-                            <th>Score</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                        <tr ng-repeat="comment in comments">
-                            <td>{{comment.title}}</td>
-                            <td>
+
+                            <!--<th>Title</th>-->
+                            <!--<th>Rating</th>-->
+                            <!--<th>Author</th>-->
+                            <!--<th>Comment</th>-->
+                            <!--<th>Score</th>-->
+                          <!---->
+                <ul>
+                        <li ng-repeat="comment in comments">
+                            <h3>{{comment.title}}</h3>
+
+                            <p>
                                 <rating max="5" ng-model="comment.rating"
                                         ng-change="updateComment(comment)" readonly="comment.objectId">
-
                                 </rating>
-                            </td>
-                            <td>{{comment.name}}</td>
-                            <td>{{comment.body}}</td>
-                            <td>
-                                {{(comment.score > 0) ? comment.score: 0}}
+                            </p>
+
+                            <p><strong>Review by:</strong> {{comment.name || 'anonymous'}}</p>
+                            <p>{{comment.body}}</p>
+                            <p>{{(comment.score > 0) ? comment.score: 0 + '  '}}
                                 <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementVotes(comment, 1)"></span>
                                 <span class="glyphicon glyphicon-thumbs-down" ng-click="incrementVotes(comment, -1)"></span>
-                            </td>
-                            <td><button class="btn btn-danger" ng-click="deleteComment(comment)">Delete</button></td>
-                        </tr>
-                </table>
+                            </p>
+                            <p><button class="btn btn-danger" ng-click="deleteComment(comment)">Delete</button></p>
+                        </li>
+                </ul>
+
                 <!-- 
                 display existing comments here
                 each comment should also have UI allowing the user to vote up/down the comment
